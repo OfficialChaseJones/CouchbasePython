@@ -1,10 +1,31 @@
 ############################################################################
 #
-#   BETA: Work in progress!
 #
 #   This script loads a couchbase bucket in to a SQL database.
-#   The basic functionality works.  Code cleanup and features need to be added.
 #
+#   If the elements have mulitple levels, then multiple tables will be created and tied together via identity column
+#
+#   For example, in the sample data set "beer-sample", two table will be created and SQL Query could be written like this:
+#
+#        select *
+#        From [cb_beer-sample]  c
+#        Join [cb_geo] g on g.cb_geoId = c.cb_geoId
+#
+#    Based on a document:
+#{
+#  "address": [
+#    "563 Second Street"
+#  ],
+#  "city": "San Francisco",
+#  ....
+#  "geo": {
+#    "accuracy": "ROOFTOP",
+#    "lat": 37.7825,
+#    "lon": -122.393
+#  },
+#  "name": "21st Amendment Brewery Cafe",
+#    ....
+#}
 #
 #
 ############################################################################

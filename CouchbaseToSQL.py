@@ -41,8 +41,6 @@ import pyodbc
 # pyodbc
 # couchbase
 
-system('cls')
-system('clear')
 
 bucket_name = 'beer-sample'
 
